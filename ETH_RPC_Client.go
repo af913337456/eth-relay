@@ -7,7 +7,7 @@ import (
 
 type ETHRPCClient struct {
 	NodeUrl string       // 代表节点的url链接
-	client  *rpc.Client  // 代表 rpc 客户端句柄实体
+	client  *rpc.Client  // 代表 rpc 客户端实例
 }
 
 // NewETHRPCClient 代表的是新建一个 “RPC” 客户端
@@ -21,7 +21,7 @@ func NewETHRPCClient(nodeUrl string) *ETHRPCClient {
 	return client
 }
 
-// 初始化 rpc 请求句柄实体
+// 初始化 rpc 请求实例
 func (erc *ETHRPCClient) initRpc() {
 	// 使用 go-ethereum 库中的 rpc 库来初始化
 	// DialHTTP 的意思是使用 http 版本的 rpc 实现方式
