@@ -15,7 +15,7 @@ import (
 
 type ETHRPCRequester struct {
 	nonceManager *NonceManager // nonce 管理者实例
-	client       *ETHRPCClient // 小写字母开头，私有的 rpc 客户端
+	client       *ETHRPCClient // 小写字母开头，私有的 rpc 客户端实例
 }
 
 func NewETHRPCRequester(nodeUrl string) *ETHRPCRequester {
