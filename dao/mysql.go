@@ -12,7 +12,7 @@ import (
 type MySQLConnector struct {
 	options *MysqlOptions
 	tables  []interface{}
-	Db      *xorm.Engine // xorm 框架句柄
+	Db      *xorm.Engine // xorm 框架实例
 }
 
 // MySQL 链接配置信息
