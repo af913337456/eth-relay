@@ -2,9 +2,13 @@
 
 书籍《区块链以太坊DApp开发实战》的 Demo 源码。
 
-使用 Go 语言编写，编译器是：Goland
+* 使用 Go 语言编写
+* Go 版本为： 1.11
+* 代码开发工具是：Goland
 
 
 #### 启动
 
 代码主要采用单元测试的方式运行。并没编写 `main` 函数，读者可以自行拓展。区块扫描部分需要依赖到 MySQL 数据库。
+
+其中 `eth-relay/block_scanner_test.go` 的 `TestBlockScanner_Start` 函数是区块遍历入口函数
