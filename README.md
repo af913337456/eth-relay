@@ -2,6 +2,8 @@
 
 书籍《区块链以太坊DApp开发实战》的 Demo 源码。
 
+购买链接: https://item.jd.com/51940056385.html
+
 * 使用 Go 语言编写
 * Go 版本为： 1.11
 * MySQL 版本为：5.7.19，引擎选择 Innodb
