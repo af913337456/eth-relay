@@ -10,6 +10,7 @@ import (
 	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/ethereum/go-ethereum/rpc"
+	"github.com/ethereum/go-ethereum/common/hexutil"
 	"math/big"
 )
 
@@ -143,7 +144,8 @@ func (r *ETHRPCRequester) GetERC20Balances(paramArr []ERC20BalanceRpcReq) ([]str
 		ret := ""
 		arg := &model.CallArg{}
 		userAddress := paramArr[i].UserAddress
-		// 下面是针对访问 balanceOf 时的必须参数，查询余额是不需要油费的，所有不需要设置 gas
+		// 下面是针对访问 balanceOf 时的必须参数，查询余额是不需要油费的，但是发现一些版本的节点又需要指定这个参数，所以下面还是指定一个
+		arg.Gas = hexutil.EncodeUint64(300000)
 		arg.To = common.HexToAddress(paramArr[i].ContractAddress)
 		//  data 参数的组合格式见 “交易参数的说明” 小节中的详解
 		arg.Data = methodId + "000000000000000000000000" + userAddress[2:]
